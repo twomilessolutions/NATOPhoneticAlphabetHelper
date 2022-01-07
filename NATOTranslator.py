@@ -25,7 +25,49 @@ class NATOTranslator:
         'w': 'whiskey',
         'x': 'x-ray',
         'y': 'yankee',
-        'z': 'zulu'
+        'z': 'zulu',
+        '~': '{tilde}',
+        '!': '{exclamation point}',
+        '@': '{at}',
+        '#': '{hashtag}',
+        '$': '{dollar sign}',
+        '%': '{percent}',
+        '^': '{caret}',
+        '&': '{ampersand}',
+        '*': '{star}',
+        '(': '{left-parenthesis}',
+        ')': '{right-parenthesis}',
+        '-': '{dash}',
+        '_': '{underscore}',
+        '+': '{plus}',
+        '=': '{equals}',
+        '1': '{one}',
+        '2': '{two}',
+        '3': '{three}',
+        '4': '{four}',
+        '5': '{five}',
+        '6': '{six}',
+        '7': '{seven}',
+        '8': '{eight}',
+        '9': '{nine}',
+        '0': '{zero}',
+        '{': '{left-curly-brace}',
+        '[': '{left-bracket}',
+        '}': '{right-curly-brace}',
+        ']': '{right-bracket}',
+        '|': '{pipe}',
+        '\\': '{back-slash}',
+        ';': '{semi-colon}',
+        ':': '{colon}',
+        '"': '{double-quote}',
+        '\'': '{single-quote}',
+        '<': '{less than}',
+        ',': '{comma}',
+        '>': '{greater than}',
+        '.': '{dot}',
+        '?': '{question mark}',
+        '/': '{forward-slash}',
+        ' ': '{space}'
     }
 
     def translate_string(self, word):
@@ -35,6 +77,6 @@ class NATOTranslator:
             if letter.lower() not in self.nato_alphabet:
                 translation.append(letter)
             else:
-                translation.append(letter + " - " + self.nato_alphabet[letter.lower()])
+                translation.append(self.nato_alphabet[letter.lower()] + " ")
 
         return translation

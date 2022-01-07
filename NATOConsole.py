@@ -8,8 +8,18 @@ def main():
     translator = NATOTranslator()
     translation = translator.translate_string(word)
 
+    print_string = ""
+    counter = 0
+    counter_limit = 10
+
     for line in translation:
-        print(Fore.CYAN + line)
+        print_string = print_string + line
+        counter += 1
+        if counter >= counter_limit:
+            counter = 0
+            print_string = print_string + "\n"
+
+    print(Fore.CYAN + print_string)
     
     print(Fore.WHITE + "")
     
